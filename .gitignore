@@ -8,8 +8,6 @@ yarn-error.log*
 # Dependency directories
 node_modules/
 
-# Build output
-build/
 dist/
 
 # Production build
@@ -32,11 +30,8 @@ node_modules/
 
 # Next.js build output
 .next/
-
-# Netlify/Vercel/Heroku deployment files
-.netlify/
-vercel/
-netlify.toml
+ 
+vercel/ 
 vercel.json
 
 # Miscellaneous
