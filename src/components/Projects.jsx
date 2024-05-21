@@ -1,6 +1,5 @@
 // src/components/Projects.js
 import React from 'react';
-import Modal from 'react-modal';
 
 import leo from '../assets/leoBlue.png';
 import movieApp from '../assets/movy.png';

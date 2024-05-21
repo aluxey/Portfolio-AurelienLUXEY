@@ -5,7 +5,7 @@ const ContactForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [error, setError] = useState('')
+  const [, setError] = useState('')
 
   const onSubmit = (e) => {
     e.preventDefault();
