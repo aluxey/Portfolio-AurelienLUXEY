@@ -18,7 +18,7 @@ const projects = [
   },
   {
     title: 'LeoBlue',
-    description: 'I built a weather app using JavaScript. This little project was for two reasons: to discover JavaScript and to learn how to use API information.',
+    description: 'During my intership I developp a flutter app for IOS that receive data from satellite and alert people on the app about potential weather alert',
     date: 'January 2024',
     link: 'https://example.com/project1',
     image: leo, 
