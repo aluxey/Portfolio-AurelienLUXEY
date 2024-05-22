@@ -10,7 +10,7 @@ import weatherApp from '../assets/weatherApp.png';
 const projects = [
   {
     title: 'Weather Application',
-    description: 'I built a weather app using JavaScript. This little project was for two reasons: to discover JavaScript and to learn how to use API information.',
+    description: 'I created a weather app using JavaScript to explore the language and learn how to work with APIs.',
     date: 'January 2024',
     link: 'https://example.com/project1',
     image: weatherApp, 
@@ -18,7 +18,7 @@ const projects = [
   },
   {
     title: 'LeoBlue',
-    description: 'During my intership I developp a flutter app for IOS that receive data from satellite and alert people on the app about potential weather alert',
+    description: 'During my internship, I developed a Flutter app for iOS that receives data from satellites and alerts users about potential weather hazards.',
     date: 'January 2024',
     link: 'https://example.com/project1',
     image: leo, 
@@ -26,7 +26,7 @@ const projects = [
   },
   {
     title: 'Lowatem',
-    description: 'I created a movie library application to explore advanced PHP ans Symfony concepts and API integration. This project also have been the first were I included a real CI/CD aspect and it has been really important even for a small team project',
+    description: 'Lowatem, my first major IT project, is a Java-based game. We developed the game\'s logic as well as its AI.',
     date: 'February 2024',
     link: 'https://example.com/project2',
     image: lowatem, 
@@ -34,7 +34,7 @@ const projects = [
   },
   {
     title: 'Moovy',
-    description: 'I created a movie library application to explore advanced JavaScript concepts and API integration.',
+    description: 'I created a movie library application to delve into advanced JavaScript concepts and API integration.',
     date: 'February 2024',
     link: 'https://example.com/project2',
     image: movieApp, 
@@ -42,7 +42,7 @@ const projects = [
   },
   {
     title: 'The library',
-    description: 'In order to finish a uni project i created a simple but fast and accesible library online using some public API. This project has been a way for me to discover how to simplify and optimise my query in javascript but also to see differents way to reach a informations.',
+    description: 'To complete a university project, I created a simple, fast, and accessible online library using public APIs. This project allowed me to discover how to simplify and optimize queries in JavaScript and explore different methods of retrieving information.',
     date: 'February 2024',
     link: 'https://example.com/project2',
     image: lib, 
