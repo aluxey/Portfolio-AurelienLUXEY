@@ -1,5 +1,5 @@
 import React from 'react'
-import heroimage from '../assets/profilepic.png'
+import heroimage from '../assets/PhotoAurelien.png'
 import cv from '../assets/CV_Aurelien_LUXEY.pdf'
 import { TypeAnimation } from 'react-type-animation'
 
