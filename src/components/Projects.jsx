@@ -6,6 +6,7 @@ import movieApp from '../assets/movy.png';
 import lowatem from '../assets/Lowatem.png';
 import lib from '../assets/libReact.png';
 import weatherApp from '../assets/weatherApp.png';
+import disco from '../assets/disco.png';
 
 const projects = [
   {
@@ -19,7 +20,7 @@ const projects = [
   {
     title: 'LeoBlue',
     description: 'During my internship, I developed a Flutter app for iOS that receives data from satellites and alerts users about potential weather hazards.',
-    date: 'January 2024',
+    date: 'August 2023',
     link: 'https://example.com/project1',
     image: leo, 
     icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg"]
@@ -27,7 +28,7 @@ const projects = [
   {
     title: 'Lowatem',
     description: 'Lowatem, my first major IT project, is a Java-based game. We developed the game\'s logic as well as its AI.',
-    date: 'February 2024',
+    date: 'November 2022',
     link: 'https://example.com/project2',
     image: lowatem, 
     icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"]
@@ -35,7 +36,7 @@ const projects = [
   {
     title: 'Moovy',
     description: 'I created a movie library application to delve into advanced JavaScript concepts and API integration.',
-    date: 'February 2024',
+    date: 'September 2023',
     link: 'https://example.com/project2',
     image: movieApp, 
     icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/symfony/symfony-original.svg"]
@@ -48,6 +49,16 @@ const projects = [
     image: lib, 
     icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg", 
             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+        ]
+  },
+  {
+    title: 'Discography',
+    description: 'This C# .NET application allows users to catalog albums and manage their borrowing. Users can view borrowed albums, check return dates, and track overdue albums. The interface offers options to borrow albums, view recommendations, change passwords, and more. It provides a clean and simple way to keep track of all album loans.',
+    date: 'Noevmber 2023',
+    link: 'https://example.com/project2',
+    image: disco, 
+    icons: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg"
         ]
   },
 ];
