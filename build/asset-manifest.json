@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.9cf82bdd.css",
-    "main.js": "/static/js/main.5b60715c.js",
-    "static/media/CV_Aurelien_LUXEY.pdf": "/static/media/CV_Aurelien_LUXEY.0f972adbd0a1eb5231e8.pdf",
+    "main.css": "/static/css/main.b997233e.css",
+    "main.js": "/static/js/main.408fcbce.js",
+    "static/media/disco.png": "/static/media/disco.c5fc36d46443f906aa5a.png",
     "static/media/movy.png": "/static/media/movy.bc82473f6bd0edbaed5a.png",
-    "static/media/profilepic.png": "/static/media/profilepic.a2b01903713e2ffc12d7.png",
     "static/media/about.jpg": "/static/media/about.26fe6f985b999e551a4e.jpg",
     "static/media/libReact.png": "/static/media/libReact.caa0d9ecd54b275d2702.png",
+    "static/media/CV_Aurelien_LUXEY.pdf": "/static/media/CV_Aurelien_LUXEY.35d735fbc2cb2ecea4f4.pdf",
     "static/media/Lowatem.png": "/static/media/Lowatem.c6e3ea18fb2352528568.png",
+    "static/media/PhotoAurelien.png": "/static/media/PhotoAurelien.d9794c66d147bd774504.png",
     "static/media/leoBlue.png": "/static/media/leoBlue.56248f8be9cecf8195c7.png",
     "static/media/weatherApp.png": "/static/media/weatherApp.69740d9801a127b5b34a.png",
     "index.html": "/index.html",
-    "main.9cf82bdd.css.map": "/static/css/main.9cf82bdd.css.map",
-    "main.5b60715c.js.map": "/static/js/main.5b60715c.js.map"
+    "main.b997233e.css.map": "/static/css/main.b997233e.css.map",
+    "main.408fcbce.js.map": "/static/js/main.408fcbce.js.map"
   },
   "entrypoints": [
-    "static/css/main.9cf82bdd.css",
-    "static/js/main.5b60715c.js"
+    "static/css/main.b997233e.css",
+    "static/js/main.408fcbce.js"
   ]
 }
