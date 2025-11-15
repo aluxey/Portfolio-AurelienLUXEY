@@ -1,82 +1,65 @@
 import React from "react";
+import { AiFillGithub } from "react-icons/ai";
 
-import disco from "../assets/disco.png";
-import leo from "../assets/leoBlue.png";
-import lib from "../assets/libReact.png";
-import lowatem from "../assets/Lowatem.png";
-import movieApp from "../assets/movy.png";
-import weatherApp from "../assets/weatherApp.png";
+import placeholder from "../assets/project-placeholder.svg";
 
 const projects = [
   {
-    title: "Weather Application",
+    title: "NoteApp",
     description:
-      "I created a weather app using JavaScript to explore the language and learn how to work with APIs.",
-    date: "January 2024",
-    link: "https://example.com/project1",
-    image: weatherApp,
+      "Application de prise de notes assistée par IA : génération/synthèse automatiques, organisation par tags et recherche améliorée.",
+    date: "2024–2025",
+    link: "https://github.com/aluxey/NoteApp",
+    image: placeholder,
     icons: [
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+    ],
+    techs: ["À compléter"],
+  },
+  {
+    title: "Mentor Agent",
+    description:
+      "Agent IA envoyant chaque jour des cours sur des thèmes choisis : curation, synthèse et planification automatique.",
+    date: "2025",
+    link: "https://github.com/aluxey/Mentor_Agent",
+    image: placeholder,
+    icons: [
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+    ],
+    techs: ["À compléter"],
+  },
+  {
+    title: "Carte du métro de Paris (ING1)",
+    description:
+      "Projet scolaire : visualisation du réseau (graphe) et calculs d’itinéraires avec Dijkstra, arbres couvrants (Prim, Kruskal). Back Flask, front JS.",
+    date: "2024",
+    link: "https://github.com/aluxey/Projet_ING1_Graphe",
+    image: placeholder,
+    icons: [
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg",
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
     ],
+    techs: ["Python", "Flask", "JavaScript", "HTML", "CSS"],
   },
   {
-    title: "LeoBlue",
+    title: "E‑Commerce",
     description:
-      "During my internship, I developed a Flutter app for iOS that receives data from satellites and alerts users about potential weather hazards.",
-    date: "August 2023",
-    link: "https://example.com/project1",
-    image: leo,
-    icons: [
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg",
-    ],
-  },
-  {
-    title: "Lowatem",
-    description:
-      "Lowatem, my first major IT project, is a Java-based game. We developed the game's logic as well as its AI.",
-    date: "November 2022",
-    link: "https://example.com/project2",
-    image: lowatem,
-    icons: [
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
-    ],
-  },
-  {
-    title: "Moovy",
-    description:
-      "I created a movie library application to delve into advanced JavaScript concepts and API integration.",
-    date: "September 2023",
-    link: "https://example.com/project2",
-    image: movieApp,
-    icons: [
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/symfony/symfony-original.svg",
-    ],
-  },
-  {
-    title: "The library",
-    description:
-      "To complete a university project, I created a simple, fast, and accessible online library using public APIs. This project allowed me to discover how to simplify and optimize queries in JavaScript and explore different methods of retrieving information.",
-    date: "February 2024",
-    link: "https://example.com/project2",
-    image: lib,
+      "Site e‑commerce full‑stack : front React, authentification et base de données avec Supabase, paiements Stripe, panel admin.",
+    date: "2024",
+    link: "https://github.com/aluxey/E-Commerce",
+    image: placeholder,
     icons: [
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
     ],
+    techs: ["React", "Supabase", "Stripe", "JavaScript", "CSS"],
   },
-  {
-    title: "Discography",
-    description:
-      "This C# .NET application allows users to catalog albums and manage their borrowing. Users can view borrowed albums, check return dates, and track overdue albums.",
-    date: "November 2023",
-    link: "https://example.com/project2",
-    image: disco,
-    icons: [
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg",
-    ],
-  },
+  
 ];
 
 const Projects = () => {
@@ -112,6 +95,15 @@ const Projects = () => {
               <span className="absolute left-8 top-8 inline-flex items-center rounded-full border border-white/10 bg-slate-950/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-100">
                 {project.date}
               </span>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Ouvrir le repo ${project.title}`}
+                className="absolute right-8 top-8 inline-flex items-center justify-center rounded-full border border-white/15 bg-slate-950/70 p-2 text-slate-200 transition hover:border-sky-400/60 hover:bg-sky-500/10"
+              >
+                <AiFillGithub size={20} />
+              </a>
             </div>
 
             <div className="flex flex-col gap-6 px-6 pb-8 pt-4">
@@ -133,12 +125,26 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
+              {project.techs && project.techs.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {project.techs.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] uppercase tracking-[0.15em] text-slate-300"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              )}
               <div className="flex items-center justify-between pt-2">
                 <a
                   href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-xs font-semibold uppercase tracking-[0.35em] text-sky-200 transition hover:text-sky-100"
                 >
-                  View project
+                  Voir le repo
                 </a>
                 <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-slate-400">
                   <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.6)]" />
