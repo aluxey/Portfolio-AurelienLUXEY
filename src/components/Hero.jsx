@@ -35,14 +35,7 @@ const Hero = () => {
         <h1 className="text-4xl font-bold leading-tight text-slate-100 sm:text-5xl lg:text-6xl">
           <span className="align-middle">I&apos;m a </span>
           <TypeAnimation
-            sequence={[
-              "Full‑Stack Developer",
-              1200,
-              "App Developer",
-              1200,
-              "Programmer",
-              1200,
-            ]}
+            sequence={["Full‑Stack Developer", 1200, "App Developer", 1200, "Programmer", 1200]}
             wrapper="span"
             speed={50}
             repeat={Infinity}
@@ -52,11 +45,9 @@ const Hero = () => {
         </h1>
 
         <p className="max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
-          My name is Aurélien LUXEY, and I have been studying IT for the past three
-          years. As I near the completion of my Bachelor&apos;s degree, I am eager to
-          pursue further studies in engineering. I possess strong technical knowledge
-          and am committed to continuous learning and discovering new advancements in
-          the field every day.
+          My name is Aurélien LUXEY, and I have been studying IT for the past three years. As I near the completion of
+          my Bachelor&apos;s degree, I am eager to pursue further studies in engineering. I possess strong technical
+          knowledge and am committed to continuous learning and discovering new advancements in the field every day.
         </p>
 
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -83,9 +74,7 @@ const Hero = () => {
               style={{ animationDelay: `${index * 0.4}s` }}
             >
               <p className="text-2xl font-bold text-slate-100">{item.value}</p>
-              <p className="mt-1 text-sm font-semibold text-slate-200 leading-snug">
-                {item.label}
-              </p>
+              <p className="mt-1 text-sm font-semibold text-slate-200 leading-snug">{item.label}</p>
               <p className="mt-2 text-[11px] uppercase tracking-[0.06em] text-slate-400 leading-5 break-words">
                 {item.detail}
               </p>
