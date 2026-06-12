@@ -1,94 +1,116 @@
 import React from "react";
-import { TypeAnimation } from "react-type-animation";
-import heroimage from "../assets/PhotoAurelien.png";
-import cv from "../assets/CV_Aurelien_LUXEY.pdf";
+import { FiCheckCircle, FiCode, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
-const highlights = [
+const benefits = [
+  "Sites rapides et performants",
+  "Design soigné & sur mesure",
+  "SEO & accessibilité",
+  "Accompagnement de A à Z",
+];
+
+const chips = [
   {
-    value: "3+",
-    label: "Years immersed in IT",
-    detail: "Continuous learning & experimentation",
+    label: "aurelien.luxeyy@gmail.com",
+    href: "mailto:aurelien.luxeyy@gmail.com",
+    icon: FiMail,
   },
   {
-    value: "2",
-    label: "Internships",
-    detail: "Mobile & DevOps missions",
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/aurelien-luxey/",
+    icon: FiLinkedin,
   },
   {
-    value: "∞",
-    label: "Curiosity",
-    detail: "New technologies explored every day",
+    label: "GitHub",
+    href: "https://github.com/aluxey",
+    icon: FiGithub,
   },
 ];
 
 const Hero = () => {
   return (
-    <section
-      className="relative mx-auto flex max-w-6xl flex-col-reverse items-center gap-16 px-6 pt-32 md:flex-row md:pt-40"
-      id="hero"
-    >
-      <div className="flex w-full flex-1 flex-col items-start gap-8">
-        <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.45em] text-slate-200">
-          Based in France
-          <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.7)]" />
+    <section className="relative isolate min-h-[760px] overflow-hidden px-5 pb-24 pt-32 text-white sm:pt-40 lg:px-8">
+      <div className="absolute inset-0 -z-10 bg-slate-950" />
+      <div className="absolute right-[-18%] top-16 -z-10 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,#7C3AED_0%,rgba(236,72,153,0.55)_42%,rgba(37,99,235,0.22)_68%,transparent_72%)] blur-3xl" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-28 bg-gradient-to-b from-transparent to-slate-50" />
+
+      <div className="mx-auto grid max-w-[1200px] items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="max-w-3xl">
+          <p className="mb-5 inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-violet-100 backdrop-blur">
+            Développeur web full-stack
+          </p>
+          <h1 className="text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+            Je conçois des sites web{" "}
+            <span className="bg-gradient-to-r from-violet-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+              modernes
+            </span>
+            , clairs et efficaces
+          </h1>
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
+            Développeur web full-stack, j’aide les indépendants, petites entreprises
+            et projets locaux à gagner en visibilité grâce à des sites rapides,
+            responsive et pensés pour convertir.
+          </p>
+
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="#projects" className="rounded-xl bg-gradient-to-r from-violet-600 to-pink-500 px-6 py-4 text-center text-sm font-semibold text-white shadow-xl shadow-violet-950/30 transition hover:-translate-y-0.5 hover:shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-300">
+              Voir mes projets
+            </a>
+            <a href="#contact" className="rounded-xl border border-white/15 bg-white/10 px-6 py-4 text-center text-sm font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-300">
+              Discutons de votre projet
+            </a>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            {chips.map((chip) => {
+              const Icon = chip.icon;
+              return (
+                <a
+                  key={chip.label}
+                  href={chip.href}
+                  target={chip.href.startsWith("http") ? "_blank" : undefined}
+                  rel={chip.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.08] px-4 py-2 text-sm text-slate-200 transition hover:bg-white/[0.14] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-300"
+                  aria-label={chip.label}
+                >
+                  <Icon aria-hidden="true" />
+                  {chip.label}
+                </a>
+              );
+            })}
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-400/10 px-4 py-2 text-sm text-emerald-100">
+              <span className="h-2 w-2 rounded-full bg-emerald-300" />
+              Disponible pour nouveaux projets
+            </span>
+          </div>
         </div>
-        <h1 className="text-4xl font-bold leading-tight text-slate-100 sm:text-5xl lg:text-6xl">
-          <span className="align-middle">I&apos;m a </span>
-          <TypeAnimation
-            sequence={["Full‑Stack Developer", 1200, "App Developer", 1200, "Programmer", 1200]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-            cursor={true}
-            className="primary-color align-middle inline-block"
-          />
-        </h1>
 
-        <p className="max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
-          My name is Aurélien LUXEY, and I have been studying IT for the past three years. As I near the completion of
-          my Bachelor&apos;s degree, I am eager to pursue further studies in engineering. I possess strong technical
-          knowledge and am committed to continuous learning and discovering new advancements in the field every day.
-        </p>
-
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-          <a
-            href={cv}
-            className="gradient-border relative inline-flex items-center justify-center overflow-hidden rounded-full px-8 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-slate-100 transition duration-300 hover:scale-[1.01]"
-          >
-            <span className="absolute inset-0 -z-10 animate-gradient rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" />
-            Download my CV
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-8 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-sky-200 transition duration-300 hover:border-sky-400/70 hover:bg-sky-500/10 hover:text-white"
-          >
-            Contact me
-          </a>
-        </div>
-
-        <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {highlights.map((item, index) => (
-            <div
-              key={item.label}
-              className="glass animate-float rounded-2xl p-5 transition duration-300 hover:-translate-y-1 hover:border-sky-400/40 hover:shadow-[0_20px_45px_rgba(56,189,248,0.15)] min-h-[140px] overflow-hidden"
-              style={{ animationDelay: `${index * 0.4}s` }}
-            >
-              <p className="text-2xl font-bold text-slate-100">{item.value}</p>
-              <p className="mt-1 text-sm font-semibold text-slate-200 leading-snug">{item.label}</p>
-              <p className="mt-2 text-[11px] uppercase tracking-[0.06em] text-slate-400 leading-5 break-words">
-                {item.detail}
-              </p>
+        <div className="relative">
+          <div className="rounded-[24px] border border-white/20 bg-white/10 p-7 shadow-[0_24px_70px_rgba(15,23,42,0.35)] backdrop-blur-xl">
+            <div className="mb-8 flex items-center justify-between">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-violet-700 shadow-lg">
+                <FiCode size={26} aria-hidden="true" />
+              </div>
+              <span className="rounded-full border border-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-slate-200">
+                Web partner
+              </span>
             </div>
-          ))}
+            <h2 className="text-2xl font-semibold tracking-tight text-white">
+              Un site pensé pour vos clients
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-slate-300">
+              De la structure des pages au déploiement, je vous accompagne pour créer
+              une présence web claire et professionnelle.
+            </p>
+            <ul className="mt-7 grid gap-4">
+              {benefits.map((benefit) => (
+                <li key={benefit} className="flex items-center gap-3 text-sm font-medium text-slate-100">
+                  <FiCheckCircle className="text-pink-300" size={18} aria-hidden="true" />
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex w-full flex-1 items-center justify-center">
-        <img
-          src={heroimage}
-          alt="Portrait of Aurélien Luxey"
-          className="w-[85%] max-w-md rounded-3xl object-contain drop-shadow-[0_25px_60px_rgba(56,189,248,0.25)] md:w-[75%]"
-        />
       </div>
     </section>
   );

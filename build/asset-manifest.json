@@ -1,17 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.c3abb181.css",
-    "main.js": "/static/js/main.097ec1dd.js",
+    "main.css": "/static/css/main.6df89bae.css",
+    "main.js": "/static/js/main.4733c821.js",
     "static/media/about.jpg": "/static/media/about.26fe6f985b999e551a4e.jpg",
-    "static/media/PhotoAurelien.png": "/static/media/PhotoAurelien.af8a9fd4bb5375c7370d.png",
-    "static/media/CV_Aurelien_LUXEY.pdf": "/static/media/CV_Aurelien_LUXEY.35d735fbc2cb2ecea4f4.pdf",
-    "static/media/project-placeholder.svg": "/static/media/project-placeholder.ff2ea0bf51945b6c6b9026278d519a9b.svg",
     "index.html": "/index.html",
-    "main.c3abb181.css.map": "/static/css/main.c3abb181.css.map",
-    "main.097ec1dd.js.map": "/static/js/main.097ec1dd.js.map"
+    "main.6df89bae.css.map": "/static/css/main.6df89bae.css.map",
+    "main.4733c821.js.map": "/static/js/main.4733c821.js.map"
   },
   "entrypoints": [
-    "static/css/main.c3abb181.css",
-    "static/js/main.097ec1dd.js"
+    "static/css/main.6df89bae.css",
+    "static/js/main.4733c821.js"
   ]
 }

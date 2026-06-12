@@ -1,159 +1,121 @@
 import React from "react";
-import { AiFillGithub } from "react-icons/ai";
-
-import placeholder from "../assets/project-placeholder.svg";
+import { FiArrowUpRight, FiCode, FiLayers, FiMonitor, FiZap } from "react-icons/fi";
 
 const projects = [
   {
-    title: "NoteApp",
+    title: "Nachhilfe mit Ayrine",
+    type: "Site vitrine",
     description:
-      "Application de prise de notes assistée par IA : génération/synthèse automatiques, organisation par tags et recherche améliorée.",
-    date: "2024–2025",
-    link: "https://github.com/aluxey/NoteApp",
-    image: placeholder,
-    icons: [
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
-    ],
-    techs: ["À compléter"],
+      "Site vitrine pour une professeure particulière. Design épuré, présentation claire des services et prise de contact simplifiée.",
+    url: "https://www.nachhilfe-mit-ayrine.de/",
+    gradient: "from-blue-500 via-violet-500 to-pink-500",
   },
   {
-    title: "Mentor Agent",
+    title: "Sabbel’s Handmade",
+    type: "E-commerce",
     description:
-      "Agent IA envoyant chaque jour des cours sur des thèmes choisis : curation, synthèse et planification automatique.",
-    date: "2025",
-    link: "https://github.com/aluxey/Mentor_Agent",
-    image: placeholder,
-    icons: [
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
-    ],
-    techs: ["À compléter"],
+      "Boutique en ligne pour une activité artisanale de crochet. Catalogue produits, panier et parcours d’achat simple.",
+    url: "https://sabbelshandmade.netlify.app/",
+    gradient: "from-pink-500 via-rose-400 to-violet-500",
   },
   {
-    title: "Carte du métro de Paris (ING1)",
+    title: "La Chartreuse de Parme",
+    type: "Restaurant",
     description:
-      "Projet scolaire : visualisation du réseau (graphe) et calculs d’itinéraires avec Dijkstra, arbres couvrants (Prim, Kruskal). Back Flask, front JS.",
-    date: "2024",
-    link: "https://github.com/aluxey/Projet_ING1_Graphe",
-    image: placeholder,
-    icons: [
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
-    ],
-    techs: ["Python", "Flask", "JavaScript", "HTML", "CSS"],
+      "Maquette fonctionnelle de site vitrine pour un restaurant italien. Présentation du lieu, de la carte, des horaires et des moyens de contact.",
+    url: "https://chartreusedeparme.netlify.app/",
+    gradient: "from-emerald-500 via-blue-500 to-violet-500",
   },
-  {
-    title: "E‑Commerce",
-    description:
-      "Site e‑commerce full‑stack : front React, authentification et base de données avec Supabase, paiements Stripe, panel admin.",
-    date: "2024",
-    link: "https://github.com/aluxey/E-Commerce",
-    image: placeholder,
-    icons: [
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
-    ],
-    techs: ["React", "Supabase", "Stripe", "JavaScript", "CSS"],
-  },
-  
 ];
+
+const stats = [
+  { value: "3+", label: "Projets réalisés", icon: FiLayers },
+  { value: "100%", label: "Projets responsive", icon: FiMonitor },
+  { value: "24h", label: "Réactivité", icon: FiZap },
+  { value: "Full-stack", label: "Front & back", icon: FiCode },
+];
+
+const ProjectPreview = ({ title, gradient }) => (
+  <div className={`h-56 rounded-t-[20px] bg-gradient-to-br ${gradient} p-5`}>
+    <div className="flex h-full flex-col rounded-2xl border border-white/25 bg-white/85 p-4 shadow-xl backdrop-blur">
+      <div className="flex items-center gap-2 border-b border-slate-200 pb-3">
+        <span className="h-3 w-3 rounded-full bg-red-300" />
+        <span className="h-3 w-3 rounded-full bg-amber-300" />
+        <span className="h-3 w-3 rounded-full bg-emerald-300" />
+      </div>
+      <div className="flex flex-1 flex-col justify-between pt-5">
+        <div>
+          <div className="h-3 w-24 rounded-full bg-slate-200" />
+          <div className="mt-4 h-6 w-9/12 rounded-full bg-slate-900" />
+          <div className="mt-3 h-3 w-7/12 rounded-full bg-slate-300" />
+        </div>
+        <div className="grid grid-cols-3 gap-3">
+          <span className="h-14 rounded-xl bg-slate-100" />
+          <span className="h-14 rounded-xl bg-slate-100" />
+          <span className="h-14 rounded-xl bg-slate-100" />
+        </div>
+      </div>
+    </div>
+    <span className="sr-only">Aperçu du projet {title}</span>
+  </div>
+);
 
 const Projects = () => {
   return (
-    <section className="mx-auto max-w-6xl px-6 scroll-mt-32" id="work">
-      <div className="flex flex-col gap-4 pb-10">
-        <p className="text-xs font-semibold uppercase tracking-[0.45em] text-slate-300">
-          Selected work
-        </p>
-        <h2 className="text-4xl font-bold text-slate-100 sm:text-5xl">
-          My <span className="primary-color">projects</span>
-        </h2>
-        <p className="max-w-2xl text-base text-slate-300 sm:text-lg">
-          From academic challenges to professional missions, each project taught me how
-          to translate a problem into a reliable, elegant product. Here is a glimpse of
-          the journey so far.
-        </p>
-      </div>
+    <section className="section-shell pt-24" id="projects">
+      <div className="section-container">
+        <div className="max-w-3xl">
+          <p className="section-label">PROJETS RÉCENTS</p>
+          <h2 className="section-heading">Des réalisations pensées pour mes clients</h2>
+          <p className="section-description">
+            Des exemples concrets de sites conçus pour rendre une activité plus
+            lisible, inspirer confiance et faciliter la prise de contact.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-        {projects.map((project) => (
-          <article
-            key={project.title}
-            className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/70 shadow-[0_20px_60px_rgba(15,23,42,0.35)] transition duration-300 hover:-translate-y-2 hover:border-sky-400/60 hover:shadow-[0_45px_85px_rgba(56,189,248,0.18)]"
-          >
-            <div className="relative h-56 overflow-hidden px-6 pt-6">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="h-full w-full rounded-3xl object-cover transition duration-500 group-hover:scale-105"
-              />
-              <div className="pointer-events-none absolute inset-x-6 top-6 h-full rounded-3xl bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
-              <span className="absolute left-8 top-8 inline-flex items-center rounded-full border border-white/10 bg-slate-950/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-100">
-                {project.date}
-              </span>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Ouvrir le repo ${project.title}`}
-                className="absolute right-8 top-8 inline-flex items-center justify-center rounded-full border border-white/15 bg-slate-950/70 p-2 text-slate-200 transition hover:border-sky-400/60 hover:bg-sky-500/10"
-              >
-                <AiFillGithub size={20} />
-              </a>
-            </div>
-
-            <div className="flex flex-col gap-6 px-6 pb-8 pt-4">
-              <div className="flex flex-col gap-3">
-                <h3 className="text-2xl font-semibold text-slate-100">
-                  {project.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-slate-200">
-                  {project.description}
-                </p>
-              </div>
-              <div className="flex flex-wrap items-center gap-3">
-                {project.icons.map((icon) => (
-                  <span
-                    key={icon}
-                    className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-2 transition duration-300 group-hover:border-sky-400/40 group-hover:bg-sky-500/10"
-                  >
-                    <img src={icon} alt="" className="h-full w-full object-contain" />
+        <div className="mt-12 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
+            <article key={project.title} className="card group overflow-hidden p-0">
+              <ProjectPreview title={project.title} gradient={project.gradient} />
+              <div className="p-6">
+                <div className="mb-4 flex items-center justify-between gap-4">
+                  <span className="rounded-full bg-violet-50 px-3 py-1 text-xs font-semibold text-violet-700 ring-1 ring-violet-100">
+                    {project.type}
                   </span>
-                ))}
-              </div>
-              {project.techs && project.techs.length > 0 && (
-                <div className="flex flex-wrap gap-2">
-                  {project.techs.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] uppercase tracking-[0.15em] text-slate-300"
-                    >
-                      {t}
-                    </span>
-                  ))}
                 </div>
-              )}
-              <div className="flex items-center justify-between pt-2">
+                <h3 className="text-xl font-bold tracking-tight text-slate-950">{project.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{project.description}</p>
                 <a
-                  href={project.link}
+                  href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs font-semibold uppercase tracking-[0.35em] text-sky-200 transition hover:text-sky-100"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-violet-700 transition hover:gap-3 hover:text-pink-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
                 >
-                  Voir le repo
+                  Voir le projet <FiArrowUpRight aria-hidden="true" />
                 </a>
-                <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-slate-400">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.6)]" />
-                  Delivered
-                </div>
               </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-12 rounded-[28px] border border-violet-100 bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.08)]">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.label} className="flex items-center gap-4 rounded-2xl bg-violet-50/70 p-5">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-violet-700 shadow-sm">
+                    <Icon aria-hidden="true" />
+                  </span>
+                  <span>
+                    <span className="block text-2xl font-bold text-slate-950">{item.value}</span>
+                    <span className="text-sm font-medium text-slate-500">{item.label}</span>
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );
