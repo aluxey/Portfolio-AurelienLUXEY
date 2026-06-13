@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Method from "./components/Method";
 import Navbar from "./components/Navbar";
+import Offers from "./components/Offers";
 import Projects from "./components/Projects";
 import Services from "./components/Services";
 import TechStack from "./components/Skills";
@@ -19,6 +20,7 @@ function App() {
       <main className="overflow-hidden">
         <Projects />
         <Services />
+        <Offers />
         <TechStack />
         <Method />
         <About />
