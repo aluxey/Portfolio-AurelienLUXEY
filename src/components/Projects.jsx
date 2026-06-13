@@ -1,5 +1,8 @@
 import React from "react";
 import { FiArrowUpRight, FiCode, FiLayers, FiMonitor, FiZap } from "react-icons/fi";
+import ayrinePreview from "../assets/websites/ayrine_nachlife.png";
+import sabbelsPreview from "../assets/websites/sabbels.png";
+import chartreusePreview from "../assets/websites/chartreuse.png";
 
 const projects = [
   {
@@ -8,6 +11,7 @@ const projects = [
     description:
       "Site vitrine pour une professeure particulière. Design épuré, présentation claire des services et prise de contact simplifiée.",
     url: "https://www.nachhilfe-mit-ayrine.de/",
+    image: ayrinePreview,
     gradient: "from-blue-500 via-violet-500 to-pink-500",
   },
   {
@@ -16,6 +20,7 @@ const projects = [
     description:
       "Boutique en ligne pour une activité artisanale de crochet. Catalogue produits, panier et parcours d’achat simple.",
     url: "https://sabbelshandmade.netlify.app/",
+    image: sabbelsPreview,
     gradient: "from-pink-500 via-rose-400 to-violet-500",
   },
   {
@@ -24,6 +29,7 @@ const projects = [
     description:
       "Maquette fonctionnelle de site vitrine pour un restaurant italien. Présentation du lieu, de la carte, des horaires et des moyens de contact.",
     url: "https://chartreusedeparme.netlify.app/",
+    image: chartreusePreview,
     gradient: "from-emerald-500 via-blue-500 to-violet-500",
   },
 ];
@@ -35,28 +41,26 @@ const stats = [
   { value: "Full-stack", label: "Front & back", icon: FiCode },
 ];
 
-const ProjectPreview = ({ title, gradient }) => (
-  <div className={`h-56 rounded-t-[20px] bg-gradient-to-br ${gradient} p-5`}>
-    <div className="flex h-full flex-col rounded-2xl border border-white/25 bg-white/85 p-4 shadow-xl backdrop-blur">
-      <div className="flex items-center gap-2 border-b border-slate-200 pb-3">
+const ProjectPreview = ({ title, image, gradient }) => (
+  <div className={`relative overflow-hidden rounded-t-[20px] bg-gradient-to-br ${gradient} p-3 sm:p-4`}>
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.45),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.16),transparent)]" />
+    <div className="relative overflow-hidden rounded-2xl border border-white/30 bg-white/80 shadow-2xl shadow-slate-950/20 ring-1 ring-slate-950/5 backdrop-blur">
+      <div className="flex items-center gap-2 border-b border-slate-200/80 bg-white/90 px-4 py-3">
         <span className="h-3 w-3 rounded-full bg-red-300" />
         <span className="h-3 w-3 rounded-full bg-amber-300" />
         <span className="h-3 w-3 rounded-full bg-emerald-300" />
+        <span className="ml-auto h-2 w-16 rounded-full bg-slate-200" />
       </div>
-      <div className="flex flex-1 flex-col justify-between pt-5">
-        <div>
-          <div className="h-3 w-24 rounded-full bg-slate-200" />
-          <div className="mt-4 h-6 w-9/12 rounded-full bg-slate-900" />
-          <div className="mt-3 h-3 w-7/12 rounded-full bg-slate-300" />
-        </div>
-        <div className="grid grid-cols-3 gap-3">
-          <span className="h-14 rounded-xl bg-slate-100" />
-          <span className="h-14 rounded-xl bg-slate-100" />
-          <span className="h-14 rounded-xl bg-slate-100" />
-        </div>
+      <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+        <img
+          src={image}
+          alt={`Aperçu du site ${title}`}
+          loading="lazy"
+          className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+        />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-slate-950/20 to-transparent" />
       </div>
     </div>
-    <span className="sr-only">Aperçu du projet {title}</span>
   </div>
 );
 
@@ -76,7 +80,7 @@ const Projects = () => {
         <div className="mt-12 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <article key={project.title} className="card group overflow-hidden p-0">
-              <ProjectPreview title={project.title} gradient={project.gradient} />
+              <ProjectPreview title={project.title} image={project.image} gradient={project.gradient} />
               <div className="p-6">
                 <div className="mb-4 flex items-center justify-between gap-4">
                   <span className="rounded-full bg-violet-50 px-3 py-1 text-xs font-semibold text-violet-700 ring-1 ring-violet-100">
@@ -89,6 +93,7 @@ const Projects = () => {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Voir le projet ${project.title}`}
                   className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-violet-700 transition hover:gap-3 hover:text-pink-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
                 >
                   Voir le projet <FiArrowUpRight aria-hidden="true" />
