@@ -1,5 +1,5 @@
 import React from "react";
-import aboutImg from "../assets/about.jpg";
+import aboutImg from "../assets/ALuxey.jpeg";
 
 const badges = [
   "Formation ingénieur",
