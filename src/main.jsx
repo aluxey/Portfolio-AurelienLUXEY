@@ -1,4 +1,5 @@
-import "@fontsource-variable/inter/wght.css";
+import "@fontsource-variable/inter-tight/wght.css";
+import "@fontsource-variable/jetbrains-mono/wght.css";
 import React from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import App from "./App";

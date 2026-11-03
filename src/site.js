@@ -6,6 +6,12 @@ export const site = {
   github: "https://github.com/aluxey",
 };
 
+// Chiffres de Mist : affichés uniquement lorsqu'ils sont renseignés.
+export const mistStats = {
+  users: null, // ex. "12 000"
+  rating: null, // ex. "4,8/5"
+};
+
 // Mentions légales : à compléter si tu factures ces prestations.
 // Une ligne n'est affichée que lorsque sa valeur est renseignée.
 export const publisher = {
@@ -18,7 +24,7 @@ export const pages = {
   "/": {
     title: "Aurélien Luxey — Développeur web full-stack",
     description:
-      "Portfolio d’Aurélien Luxey, développeur web full-stack. Création de sites vitrines, sites e-commerce simples et interfaces web modernes pour indépendants, petites entreprises et projets locaux.",
+      "Aurélien Luxey, développeur full-stack et créateur de Mist. Je conçois des sites vitrines et des boutiques simples pour les indépendants et les petites entreprises.",
   },
   "/mentions-legales/": {
     title: "Mentions légales et confidentialité — Aurélien Luxey",

@@ -1,21 +1,20 @@
 import React from "react";
-import { FiArrowLeft } from "react-icons/fi";
 import { publisher, site } from "../site";
 
 const Section = ({ id, title, children }) => (
   <section id={id} className="mt-12 scroll-mt-8">
-    <h2 className="text-2xl font-bold tracking-tight text-slate-950">{title}</h2>
-    <div className="mt-4 space-y-4 text-base leading-8 text-slate-600">{children}</div>
+    <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
+    <div className="mt-4 space-y-4 text-base leading-8 text-muted">{children}</div>
   </section>
 );
 
 const Legal = () => (
-  <main className="section-shell">
+  <main className="px-6 py-14 sm:py-20">
     <div className="mx-auto max-w-3xl">
-      <a href="/" className="inline-flex items-center gap-2 rounded-lg text-sm font-semibold text-violet-700 hover:text-pink-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500">
-        <FiArrowLeft aria-hidden="true" /> Retour à l’accueil
+      <a href="/" className="text-link text-base">
+        ← Retour à l’accueil
       </a>
-      <h1 className="mt-8 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
+      <h1 className="section-title mt-8">
         Mentions légales et confidentialité
       </h1>
 
@@ -26,7 +25,7 @@ const Legal = () => (
           {publisher.siret && <><br />SIRET : {publisher.siret}</>}
           {publisher.address && <><br />{publisher.address}</>}
           <br />
-          Contact : <a className="text-violet-700 underline underline-offset-2" href={`mailto:${site.email}`}>{site.email}</a>
+          Contact : <a className="text-ink underline underline-offset-2" href={`mailto:${site.email}`}>{site.email}</a>
           <br />
           Directeur de la publication : {site.name}
         </p>
@@ -58,7 +57,7 @@ const Legal = () => (
         <p>
           Vous pouvez demander l’accès à vos données, leur rectification ou leur
           suppression, ou vous opposer à leur traitement, en écrivant à{" "}
-          <a className="text-violet-700 underline underline-offset-2" href={`mailto:${site.email}`}>{site.email}</a>.
+          <a className="text-ink underline underline-offset-2" href={`mailto:${site.email}`}>{site.email}</a>.
           Vous pouvez aussi adresser une réclamation à la CNIL.
         </p>
       </Section>
