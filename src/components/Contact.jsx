@@ -1,37 +1,137 @@
-import React from "react";
-import { FiArrowRight, FiMail } from "react-icons/fi";
+import React, { useEffect, useState } from "react";
+import { site } from "../site";
+
+export const OFFER_SELECTED_EVENT = "offer-selected";
+
+const projectTypes = [
+  "Site vitrine essentiel",
+  "Site vitrine pro",
+  "Site e-commerce simple",
+  "Refonte de site",
+  "Maintenance & support",
+  "Autre",
+];
+
+const encode = (form) => new URLSearchParams(new FormData(form)).toString();
 
 const ContactForm = () => {
-  return (
-    <section className="section-shell pb-24" id="contact">
-      <div className="section-container">
-        <div className="relative overflow-hidden rounded-[28px] bg-slate-950 px-6 py-14 text-white shadow-[0_20px_60px_rgba(15,23,42,0.18)] md:px-10 lg:px-14">
-          <div className="absolute right-[-12%] top-[-35%] h-96 w-96 rounded-full bg-[radial-gradient(circle,#7C3AED_0%,rgba(236,72,153,0.7)_45%,transparent_72%)] blur-3xl" />
-          <div className="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-            <div className="max-w-3xl">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-violet-200">
-                CONTACT
-              </p>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
-                Parlons de votre projet
-              </h2>
-              <p className="mt-5 text-base leading-8 text-slate-300 sm:text-lg">
-                Vous avez besoin d’un site vitrine, d’une boutique simple ou d’une
-                refonte ? Discutons-en et voyons ensemble la solution la plus adaptée.
-              </p>
-            </div>
+  const [status, setStatus] = useState("idle");
+  const [projectType, setProjectType] = useState("");
 
-            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-              <a href="mailto:aurelien.luxeyy@gmail.com" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-4 text-sm font-semibold text-slate-950 shadow-xl shadow-slate-950/20 transition hover:-translate-y-0.5 hover:bg-violet-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-300">
-                Discutons ensemble <FiArrowRight aria-hidden="true" />
-              </a>
-              <a href="mailto:aurelien.luxeyy@gmail.com" className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-6 py-4 text-sm font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-300">
-                <FiMail aria-hidden="true" /> Envoyer un e-mail
-              </a>
-            </div>
+  useEffect(() => {
+    const onOfferSelected = (event) => setProjectType(event.detail);
+    window.addEventListener(OFFER_SELECTED_EVENT, onOfferSelected);
+    return () => window.removeEventListener(OFFER_SELECTED_EVENT, onOfferSelected);
+  }, []);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setStatus("sending");
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode(form),
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      form.reset();
+      setProjectType("");
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  return (
+    <section id="contact" aria-labelledby="contact-title" className="section grid scroll-mt-6 gap-12 md:grid-cols-2">
+      <div>
+        <h2 id="contact-title" className="text-[clamp(2.375rem,5.4vw,4.5rem)] font-semibold leading-none tracking-[-0.04em]">
+          Parlons de votre projet.
+        </h2>
+        <p className="mt-6 text-muted">
+          Formation d’ingénieur à l’Efrei, passé chez ManoMano, aujourd’hui chez
+          TimeOne. Vous échangez directement avec moi.
+        </p>
+        <p className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-base">
+          <a className="text-link" href={`mailto:${site.email}`}>{site.email}</a>
+          <a className="text-link" href={site.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a className="text-link" href={site.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+      </div>
+
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="company"
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-[18px]"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <p className="hidden">
+          <label>
+            Ne pas remplir : <input name="company" tabIndex={-1} autoComplete="off" />
+          </label>
+        </p>
+
+        <label className="text-[15px] font-medium">
+          Nom
+          <input className="field min-h-12" name="name" type="text" autoComplete="name" required />
+        </label>
+        <label className="text-[15px] font-medium">
+          E-mail
+          <input className="field min-h-12" name="email" type="email" autoComplete="email" required />
+        </label>
+        <label className="text-[15px] font-medium">
+          Votre besoin
+          <select
+            className="field min-h-12"
+            name="project-type"
+            value={projectType}
+            onChange={(event) => setProjectType(event.target.value)}
+          >
+            <option value="">Je ne sais pas encore</option>
+            {projectTypes.map((type) => (
+              <option key={type} value={type}>{type}</option>
+            ))}
+          </select>
+        </label>
+        <label className="text-[15px] font-medium">
+          Message
+          <textarea className="field py-3" name="message" rows={4} required />
+        </label>
+
+        <div>
+          <button
+            type="submit"
+            disabled={status === "sending"}
+            className="min-h-[52px] cursor-pointer rounded-xl bg-ink px-[26px] font-semibold text-paper transition-opacity hover:opacity-85 disabled:cursor-wait disabled:opacity-60"
+          >
+            {status === "sending" ? "Envoi en cours…" : "Envoyer ma demande"}
+          </button>
+          <p className="mt-4 text-sm leading-snug text-muted">
+            Vos informations servent uniquement à répondre à votre demande.{" "}
+            <a className="underline underline-offset-2" href="/mentions-legales/#confidentialite">
+              En savoir plus
+            </a>
+          </p>
+          <div aria-live="polite">
+            {status === "success" && (
+              <p className="mt-4 rounded-[10px] border border-line px-4 py-3 text-base">
+                Merci, votre message est bien envoyé. Je vous réponds rapidement.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="mt-4 rounded-[10px] border border-ink px-4 py-3 text-base">
+                L’envoi n’a pas abouti. Vous pouvez m’écrire directement à{" "}
+                <a className="font-semibold underline" href={`mailto:${site.email}`}>{site.email}</a>.
+              </p>
+            )}
           </div>
         </div>
-      </div>
+      </form>
     </section>
   );
 };
