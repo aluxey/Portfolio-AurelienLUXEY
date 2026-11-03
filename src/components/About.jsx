@@ -1,5 +1,5 @@
 import React from "react";
-import aboutImg from "../assets/ALuxey.jpeg";
+import aboutImg from "../assets/ALuxey.webp";
 
 const badges = [
   "Formation ingénieur",
@@ -16,14 +16,18 @@ const About = () => {
           <div className="overflow-hidden rounded-[22px] bg-slate-100">
             <img
               src={aboutImg}
-              alt="Aurélien Luxey travaillant sur un ordinateur"
+              alt="Portrait d’Aurélien Luxey en extérieur, dans un jardin ensoleillé"
+              width="900"
+              height="1200"
+              loading="lazy"
+              decoding="async"
               className="h-full max-h-[520px] w-full object-cover"
             />
           </div>
 
           <div>
             <p className="section-label">À PROPOS</p>
-            <h2 className="section-heading">À propos</h2>
+            <h2 className="section-heading">Qui se cache derrière vos futurs sites</h2>
             <div className="mt-6 space-y-5 text-base leading-8 text-slate-600">
               <p>
                 Je suis Aurélien Luxey, développeur web full-stack et étudiant en

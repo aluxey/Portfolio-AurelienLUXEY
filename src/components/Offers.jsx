@@ -1,4 +1,5 @@
 import React from "react";
+import { OFFER_SELECTED_EVENT } from "./Contact";
 import { FiArrowRight, FiCheck, FiClock, FiCreditCard, FiFileText, FiGlobe, FiShield } from "react-icons/fi";
 
 const offers = [
@@ -56,7 +57,7 @@ const legalItems = [
   },
   {
     title: "CGV simples",
-    text: "Cadre clair pour tes prestations : périmètre, paiement, délais et responsabilités.",
+    text: "Cadre clair pour vos prestations : périmètre, paiement, délais et responsabilités.",
     icon: FiCheck,
   },
   {
@@ -126,7 +127,8 @@ const Offers = () => {
                 </ul>
 
                 <a
-                  href={`mailto:aurelien.luxeyy@gmail.com?subject=Demande%20de%20devis%20-%20${encodeURIComponent(offer.name)}`}
+                  href="#contact"
+                  onClick={() => window.dispatchEvent(new CustomEvent(OFFER_SELECTED_EVENT, { detail: offer.name }))}
                   className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-4 text-sm font-semibold transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 sm:w-auto ${
                     offer.featured
                       ? "bg-white text-slate-950 hover:bg-violet-50"

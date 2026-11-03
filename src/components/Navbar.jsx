@@ -6,8 +6,8 @@ const navLinks = [
   { label: "Projets", href: "#projects" },
   { label: "Services", href: "#services" },
   { label: "Offres", href: "#offers" },
-  { label: "À propos", href: "#about" },
   { label: "Méthode", href: "#method" },
+  { label: "À propos", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -18,9 +18,18 @@ const Navbar = () => {
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 12);
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isOpen) return undefined;
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isOpen]);
 
   const closeMenu = () => setIsOpen(false);
 
@@ -66,12 +75,13 @@ const Navbar = () => {
           onClick={() => setIsOpen((current) => !current)}
           aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={isOpen}
+          aria-controls="mobile-menu"
         >
           {isOpen ? <FiX size={22} /> : <FiMenu size={22} />}
         </button>
       </nav>
 
-      <div className={`lg:hidden ${isOpen ? "block" : "hidden"}`}>
+      <div id="mobile-menu" className={`lg:hidden ${isOpen ? "block" : "hidden"}`}>
         <div className="mx-5 mb-5 rounded-2xl border border-white/10 bg-slate-900/95 p-4 shadow-2xl backdrop-blur-xl">
           <div className="grid gap-2">
             {navLinks.map((link) => (

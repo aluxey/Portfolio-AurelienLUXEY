@@ -46,7 +46,7 @@ const Hero = () => {
             , clairs et efficaces
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
-            Développeur web full-stack, j’aide les indépendants, petites entreprises
+            J’aide les indépendants, petites entreprises
             et projets locaux à gagner en visibilité grâce à des sites rapides,
             responsive et pensés pour convertir.
           </p>

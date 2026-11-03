@@ -1,11 +1,12 @@
 import React from "react";
 
 const footerLinks = [
-  { label: "Accueil", href: "#top" },
-  { label: "Projets", href: "#projects" },
-  { label: "Services", href: "#services" },
-  { label: "Offres", href: "#offers" },
-  { label: "Contact", href: "#contact" },
+  { label: "Accueil", href: "/#top" },
+  { label: "Projets", href: "/#projects" },
+  { label: "Services", href: "/#services" },
+  { label: "Offres", href: "/#offers" },
+  { label: "Contact", href: "/#contact" },
+  { label: "Mentions légales", href: "/mentions-legales/" },
 ];
 
 const Footer = () => {
@@ -28,7 +29,7 @@ const Footer = () => {
             ))}
           </ul>
         </nav>
-        <p>© {year} Tous droits réservés.</p>
+        <p suppressHydrationWarning>© {year} Tous droits réservés.</p>
       </div>
     </footer>
   );

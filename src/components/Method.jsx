@@ -36,7 +36,7 @@ const steps = [
 
 const Method = () => {
   return (
-    <section className="relative overflow-hidden bg-slate-950 px-5 py-24 text-white lg:px-8" id="method">
+    <section className="relative overflow-clip bg-slate-950 px-5 py-24 text-white lg:px-8" id="method">
       <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-violet-500/25 blur-3xl" aria-hidden="true" />
       <div className="absolute -right-24 bottom-10 h-80 w-80 rounded-full bg-pink-500/20 blur-3xl" aria-hidden="true" />
 

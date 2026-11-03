@@ -1,8 +1,8 @@
 import React from "react";
 import { FiArrowUpRight, FiCode, FiLayers, FiMonitor, FiZap } from "react-icons/fi";
-import ayrinePreview from "../assets/websites/ayrine_nachlife.png";
-import sabbelsPreview from "../assets/websites/sabbels.png";
-import chartreusePreview from "../assets/websites/chartreuse.png";
+import ayrinePreview from "../assets/websites/ayrine_nachlife.webp";
+import sabbelsPreview from "../assets/websites/sabbels.webp";
+import chartreusePreview from "../assets/websites/chartreuse.webp";
 
 const projects = [
   {
@@ -56,6 +56,9 @@ const ProjectPreview = ({ title, image, gradient }) => (
           src={image}
           alt={`Aperçu du site ${title}`}
           loading="lazy"
+          decoding="async"
+          width="1000"
+          height="625"
           className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
         />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-slate-950/20 to-transparent" />
@@ -114,7 +117,7 @@ const Projects = () => {
                   </span>
                   <span>
                     <span className="block text-2xl font-bold text-slate-950">{item.value}</span>
-                    <span className="text-sm font-medium text-slate-500">{item.label}</span>
+                    <span className="text-sm font-medium text-slate-600">{item.label}</span>
                   </span>
                 </div>
               );

@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  SiCss3,
+  SiCss,
   SiGithub,
   SiHtml5,
   SiJavascript,
@@ -15,7 +15,7 @@ import { FiMessageCircle, FiShield, FiSmile, FiTarget, FiUserCheck } from "react
 
 const technologies = [
   { label: "HTML5", icon: SiHtml5 },
-  { label: "CSS3", icon: SiCss3 },
+  { label: "CSS3", icon: SiCss },
   { label: "JavaScript", icon: SiJavascript },
   { label: "React", icon: SiReact },
   { label: "PHP", icon: SiPhp },
