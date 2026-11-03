@@ -44,7 +44,8 @@ const Legal = () => (
       <Section id="confidentialite" title="Données personnelles">
         <p>
           Le formulaire de contact recueille votre nom, votre adresse e-mail, votre
-          besoin et votre message. Ces données servent uniquement à répondre à votre
+          besoin et votre message. Netlify enregistre aussi votre adresse IP et le
+          type de votre navigateur lors de l’envoi. Ces données servent uniquement à répondre à votre
           demande et à préparer un éventuel devis. Elles ne sont ni vendues ni
           utilisées à des fins publicitaires.
         </p>
