@@ -39,11 +39,11 @@ const Projects = () => (
             <img
               src={project.image}
               alt={project.alt}
-              width="1000"
-              height="750"
+              width="800"
+              height="500"
               loading="lazy"
               decoding="async"
-              className="block aspect-[4/3] w-full rounded-[14px] object-cover object-top"
+              className="block h-auto w-full rounded-[14px] border border-line"
             />
             <h3 className="mb-1 mt-[18px] text-[22px] font-bold leading-snug tracking-[-0.01em] underline-offset-4 group-hover:underline">
               {project.title}
