@@ -4,6 +4,7 @@ const links = [
   { label: "Mist", href: "#mist" },
   { label: "Sites clients", href: "#sites" },
   { label: "Offres", href: "#offres" },
+  { label: "À propos", href: "#a-propos" },
 ];
 
 const Navbar = () => (

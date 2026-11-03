@@ -51,8 +51,8 @@ const ContactForm = () => {
           Parlons de votre projet.
         </h2>
         <p className="mt-6 text-muted">
-          Formation d’ingénieur à l’Efrei, passé chez ManoMano, aujourd’hui chez
-          TimeOne. Vous échangez directement avec moi.
+          Décrivez votre besoin en quelques lignes. Vous échangez directement
+          avec moi.
         </p>
         <p className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-base">
           <a className="text-link" href={`mailto:${site.email}`}>{site.email}</a>
