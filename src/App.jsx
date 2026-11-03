@@ -1,3 +1,4 @@
+import About from "./components/About";
 import ContactForm from "./components/Contact";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
@@ -21,6 +22,7 @@ const Home = () => (
         <Mist />
         <Projects />
         <Offers />
+        <About />
         <ContactForm />
       </main>
     </div>
